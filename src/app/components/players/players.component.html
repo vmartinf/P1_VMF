@@ -1,0 +1,12 @@
+<div class="players-container">
+   <h2>Lista de Jugadores</h2>
+    <ul class="players-list">
+      <li *ngFor="let player of players" class="player-item">
+        <img [src]="player.image" alt="{{ player.name }}" class="img-fluid">
+        <span>{{ player.name }} - {{ player.position }}</span>
+      </li>
+    </ul>
+  
+    <p *ngIf="players.length === 0">No hay jugadores disponibles</p>
+  </div>
+  
