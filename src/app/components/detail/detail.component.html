@@ -1,1 +1,7 @@
-<p>detail works!</p>
+<div *ngIf="player" class="detail-container">
+    <h2>{{ player.name }} - {{ player.position }}</h2>
+    <img [src]="player.image" alt="{{ player.name }}">
+    <p><strong>Edad:</strong> {{ player.age }} años</p>
+    <p><strong>Altura:</strong> {{ player.height }}</p>
+  </div>
+  
