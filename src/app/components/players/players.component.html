@@ -1,12 +1,31 @@
+<!-- Contenedor principal para la sección de jugadores -->
 <div class="players-container">
-   <h2>Lista de Jugadores</h2>
-    <ul class="players-list">
-      <li *ngFor="let player of players" class="player-item">
-        <img [src]="player.image" alt="{{ player.name }}" class="img-fluid">
-        <span>{{ player.name }} - {{ player.position }}</span>
-      </li>
-    </ul>
-  
-    <p *ngIf="players.length === 0">No hay jugadores disponibles</p>
-  </div>
+
+  <!-- Título de la sección -->
+  <h2>Lista de Jugadores</h2>
+
+  <!-- Lista desordenada que contendrá todos los jugadores -->
+  <ul class="players-list">
+
+    <!-- Directiva *ngFor: recorre el array 'players' y genera un <li> por cada jugador -->
+    <li *ngFor="let player of players" class="player-item">
+
+      <!-- Muestra la imagen del jugador. [src] enlaza dinámicamente a player.image -->
+      <!-- El atributo alt mejora la accesibilidad mostrando el nombre si no se carga la imagen -->
+      <img [src]="player.image" alt="{{ player.name }}" class="img-fluid">
+
+      <!-- Datos personales -->
+      <h3>{{ player.name }}</h3>
+      <p><strong>Posición:</strong> {{ player.position }}</p>
+      <p><strong>Edad:</strong> {{ player.age }} años</p>
+      <p><strong>Altura:</strong> {{ player.height }}</p>
+
+    </li>
+  </ul>
+
+  <!-- Mensaje alternativo: se muestra solo si el array 'players' está vacío -->
+  <p *ngIf="players.length === 0">No hay jugadores disponibles</p>
+
+</div>
+
   
