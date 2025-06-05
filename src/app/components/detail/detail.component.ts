@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Player } from '../../data/players-data';
 
@@ -11,4 +11,11 @@ import { Player } from '../../data/players-data';
 })
 export class DetailComponent {
   @Input() player!: Player;
+
+  // 🔹 Emite un evento al padre cuando se hace clic en "Volver"
+  @Output() volver = new EventEmitter<void>();
+
+  onBack(): void {
+    this.volver.emit();
+  }
 }
