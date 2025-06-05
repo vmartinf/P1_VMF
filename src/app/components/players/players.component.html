@@ -3,11 +3,7 @@
   <h2>Lista de Jugadores</h2>
   <ul class="players-list">
     <li *ngFor="let player of players" (click)="selectPlayer(player)" class="player-item" style="cursor: pointer;">
-      <img [src]="player.image" alt="{{ player.name }}" width="150">
       <h3>{{ player.name }}</h3>
-      <p><strong>Posición:</strong> {{ player.position }}</p>
-      <p><strong>Edad:</strong> {{ player.age }} años</p>
-      <p><strong>Altura:</strong> {{ player.height }}</p>
     </li>
   </ul>
 </div>
